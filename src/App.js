@@ -3,6 +3,7 @@ import './App.css';
 import HistoryLog from './components/HistoryLog.js';
 import DisplayPanel from './components/DisplayPanel.js';
 import SearchPanel from './components/SearchPanel.js';
+import $ from 'jquery';
 
 class App extends Component {
   constructor(props) {
@@ -44,9 +45,7 @@ class App extends Component {
   }
   handleClickInHistory = (e) => {
     this.setState({ activeHistoryLink: e.target.id });
-    const elems = document.querySelectorAll('a');
-    for (let i = 0; i < elems.length; i++)
-        elems[i].classList.remove('active');
+    $('.list-group-item').removeClass('active');
     e.target.classList.add("active");
   }
   componentDidMount = () => {

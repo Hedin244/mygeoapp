@@ -1,10 +1,11 @@
 import React from 'react';
 
 const HistoryLog = (props) => {
-  let id = -1;
-  const history = props.history.slice(0).reverse().map( location => {
-      id++;
-      return <a className="list-group-item" key={id} onClick={props.handleClick} id={id}>{location.ip}</a>
+  let locationCount = 0;
+  const history = props.history.map( location => {
+      let listItem = <a className="list-group-item" key={locationCount} onClick={props.handleClick} id={locationCount}>{location.ip}</a>;
+      locationCount++;
+      return listItem;
   });
   return(
     <div className="form-group">
