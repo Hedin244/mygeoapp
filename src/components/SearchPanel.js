@@ -8,7 +8,7 @@ const SearchPanel = (props) => {
     <div className="row margin">
       <form>
         <div className="input-group">
-          <input type="text" className="form-control" placeholder="Search" onChange={handleChange} onSubmit={handleSubmit} value={inputValue}/>
+          <input type="text" className="form-control" placeholder="Search ip or url" onChange={handleChange} onSubmit={handleSubmit} value={inputValue}/>
           <div className="input-group-btn">
             <button className="btn btn-default" type="submit" onClick={handleSubmit}>
               <i className="glyphicon glyphicon-search"></i>

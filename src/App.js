@@ -3,7 +3,6 @@ import './App.css';
 import HistoryLog from './components/HistoryLog.js';
 import DisplayPanel from './components/DisplayPanel.js';
 import SearchPanel from './components/SearchPanel.js';
-import Alert from './components/Alert.js';
 
 class App extends Component {
   constructor(...args) {
@@ -48,7 +47,6 @@ class App extends Component {
   }
   componentDidMount = () => {
     this.getNewLocation("");
-    isAlertOn: false;
   }
   render() {
     const lastLocation = this.state.history[this.state.history.length-1];
