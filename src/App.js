@@ -29,7 +29,7 @@ class App extends Component {
     });
   }
   handleSubmit = (e) => {
-    e.preventDefault;
+    e.preventDefault();
     this.getNewLocation(this.state.inputValue);
     e.target.value = "";
     this.setState({
