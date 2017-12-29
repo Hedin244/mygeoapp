@@ -75,7 +75,7 @@ class App extends Component {
                 inputValue={this.state.inputValue}/>
 
                 <div className={alarm}>
-                  <strong>Error!</strong> Ip or URL You provided was wrong.
+                  Incorrect IP or url adress
                 </div>
 
               <DisplayPanel location={chosenLocation} />
