@@ -21,3 +21,18 @@ const Map = compose(
 );
 
 export default Map;
+
+Map.defaultProps = {
+  mapMarker: {
+               ip: " ",
+               country_code: " ",
+               country_name: " ",
+               region_code: " ",
+               region_name: " ",
+               city: " ",
+               zip_code: " ",
+               time_zone: " ",
+               latitude: 0,
+               longitude: 0
+            }
+}

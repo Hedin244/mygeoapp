@@ -10,42 +10,42 @@ class App extends Component {
       this.state = {
         inputValue: " ",
         history: [
-          {
-            ip: "0",
-            country_code: "0",
-            country_name: "0",
-            region_code: "0",
-            region_name: "0",
-            city: "0",
-            zip_code: "0",
-            time_zone: "0",
-            latitude: "0",
-            longitude: "0"
-          },
-          {
-            ip: "1",
-            country_code: "1",
-            country_name: "1",
-            region_code: "1",
-            region_name: "1",
-            city: "1",
-            zip_code: "1",
-            time_zone: "1",
-            latitude: "1",
-            longitude: "1"
-          },
-          {
-            ip: "2",
-            country_code: "2",
-            country_name: "2",
-            region_code: "2",
-            region_name: "2",
-            city: "2",
-            zip_code: "2",
-            time_zone: "2",
-            latitude: "2",
-            longitude: "2"
-          }
+          // {
+          //   ip: "0",
+          //   country_code: "0",
+          //   country_name: "0",
+          //   region_code: "0",
+          //   region_name: "0",
+          //   city: "0",
+          //   zip_code: "0",
+          //   time_zone: "0",
+          //   latitude: "0",
+          //   longitude: "0"
+          // },
+          // {
+          //   ip: "1",
+          //   country_code: "1",
+          //   country_name: "1",
+          //   region_code: "1",
+          //   region_name: "1",
+          //   city: "1",
+          //   zip_code: "1",
+          //   time_zone: "1",
+          //   latitude: "1",
+          //   longitude: "1"
+          // },
+          // {
+          //   ip: "2",
+          //   country_code: "2",
+          //   country_name: "2",
+          //   region_code: "2",
+          //   region_name: "2",
+          //   city: "2",
+          //   zip_code: "2",
+          //   time_zone: "2",
+          //   latitude: "2",
+          //   longitude: "2"
+          // }
         ]
       };
       this.handleChange = this.handleChange.bind(this);
@@ -100,6 +100,7 @@ class App extends Component {
       {/* --- Top map and info --- */}
               <div className="row">
                 <div className="col-xs-7">
+                  <Map mapMarker={this.state.history[this.state.history.length-1]} />
                 </div>
                 <div className="col-xs-5">
                   <div className="Info">
