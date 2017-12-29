@@ -3,13 +3,6 @@ import InfoPanel from './InfoPanel.js';
 import Map from './Map.js';
 
 class DisplayPanel extends Component {
-  constructor(props) {
-      super(props);
-
-  }
-  componentWillReceiveProps(nextProps) {
-
-  }
   render() {
     const location = this.props.location;
     return(
