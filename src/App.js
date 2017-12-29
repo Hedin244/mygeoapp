@@ -6,8 +6,8 @@ import SearchPanel from './components/SearchPanel.js';
 import $ from 'jquery';
 
 class App extends Component {
-  constructor(props) {
-      super(props);
+  constructor(...args) {
+      super(...args);
       this.state = {
         inputValue: "",
         activeHistoryLink: null,
@@ -32,16 +32,16 @@ class App extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.getNewLocation(this.state.inputValue);
-    e.target.value = "";
-    this.setState({
-      inputValue: ""
-    })
+    if (this.state.inputValue !== "") {
+      this.getNewLocation(this.state.inputValue);
+      this.setState({
+        inputValue: ""
+      });
+    }
   }
   handleChange = (e) => {
-    this.setState({
-      inputValue: e.target.value
-    })
+    const inputValue = e.target.value.trim();
+    this.setState({ inputValue });
   }
   handleClickInHistory = (e) => {
     this.setState({ activeHistoryLink: e.target.id });

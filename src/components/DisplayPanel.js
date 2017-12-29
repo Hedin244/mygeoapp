@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import InfoPanel from './InfoPanel.js';
 import Map from './Map.js';
 
-class DisplayPanel extends Component {
-  render() {
-    const location = this.props.location;
-    return(
-      <div className="row">
-        <div className="col-xs-7">
-          <Map mapMarker={location} />
-        </div>
-        <div className="col-xs-5">
-          <div className="Info">
-            <InfoPanel location={location} />
-          </div>
+const DisplayPanel = (props) => {
+  const location = props.location;
+  return(
+    <div className="row">
+      <div className="col-xs-7">
+        <Map mapMarker={location} />
+      </div>
+      <div className="col-xs-5">
+        <div className="Info">
+          <InfoPanel location={location} />
         </div>
       </div>
-    );
-  }
+    </div>
+  )
 };
 
 DisplayPanel.defaultProps = {
