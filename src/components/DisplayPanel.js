@@ -8,7 +8,7 @@ class DisplayPanel extends Component {
 
   }
   componentWillReceiveProps(nextProps) {
-    this.props = nextProps;
+
   }
   render() {
     const location = this.props.location;

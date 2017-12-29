@@ -1,13 +1,11 @@
 .Left_List{
-  background-color: lightblue;
   height: 694px;
+  overflow:auto;
 }
 .Map{
-  background-color: #FF9999;
   height: 300px;
 }
 .Info{
-  background-color: #99FF99;
   height: 300px;
 }
 .top_margin{

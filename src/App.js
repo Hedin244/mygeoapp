@@ -14,8 +14,7 @@ class App extends Component {
       };
   }
   getNewLocation = (ip) => {
-    let getUrl = 'https://freegeoip.net/json/';
-    if (typeof ip !== 'undefined') getUrl = 'https://freegeoip.net/json/' + ip;
+    const getUrl = 'https://freegeoip.net/json/' + ip;
     fetch(getUrl)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -26,6 +25,8 @@ class App extends Component {
         });
       })
     .catch((error) => {
+      //error
+      window.alert("Invalid ip or adress");
     });
   }
   handleSubmit = (e) => {
@@ -42,23 +43,18 @@ class App extends Component {
     })
   }
   handleClickInHistory = (e) => {
-    var selector, elems, makeActive;
-    selector = 'a';
-    elems = document.querySelectorAll(selector);
-    makeActive = function () {
-    for (var i = 0; i < elems.length; i++)
+    this.setState({ activeHistoryLink: e.target.id });
+    const elems = document.querySelectorAll('a');
+    for (let i = 0; i < elems.length; i++)
         elems[i].classList.remove('active');
-
-    this.classList.add('active');
-};
-
-for (var i = 0; i < elems.length; i++)
-    elems[i].addEventListener('mousedown', makeActive);
+    e.target.classList.add("active");
   }
   componentDidMount = () => {
-    this.getNewLocation();
+    this.getNewLocation(" ");
   }
   render() {
+    const lastLocation = this.state.history[this.state.history.length-1];
+    const chosenLocation = this.state.history[this.state.activeHistoryLink]
     return (
       <div className="container-fluid well">
           <div className="row">
@@ -74,9 +70,12 @@ for (var i = 0; i < elems.length; i++)
             </div>
 
             <div className="col-xs-8">
-              <DisplayPanel location={this.state.history[this.state.history.length-1]} />
-              <SearchPanel handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-              <DisplayPanel location={this.state.history[this.state.activeHistoryLink]} />
+              <DisplayPanel location={lastLocation} />
+              <SearchPanel
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                inputValue={this.state.inputValue}/>
+              <DisplayPanel location={chosenLocation} />
             </div>
 
           </div>
