@@ -1,16 +1,21 @@
-.Left_List{
-  height: 694px;
+.left_list{
+  height: 734px;
   overflow:auto;
 }
-.Map{
+.map{
   height: 300px;
 }
-.Info{
-  height: 300px;
+.info{
+  max-height: 300px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 300px;
 }
-.top_margin{
-  margin-top: 30px;
+.margin{
+  margin: 30px 0px;
 }
-.bot_margin{
-  margin-bottom: 30px;
+.alarm{
+  display: block;
+  background-color: red;
+  height: 500px;
 }

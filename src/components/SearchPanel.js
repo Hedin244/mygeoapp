@@ -5,7 +5,7 @@ const SearchPanel = (props) => {
   const handleSubmit = props.handleSubmit;
   const inputValue = props.inputValue;
   return(
-    <div className="row top_margin bot_margin">
+    <div className="row margin">
       <form>
         <div className="input-group">
           <input type="text" className="form-control" placeholder="Search" onChange={handleChange} onSubmit={handleSubmit} value={inputValue}/>

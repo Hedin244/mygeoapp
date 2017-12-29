@@ -10,7 +10,7 @@ const DisplayPanel = (props) => {
         <Map mapMarker={location} />
       </div>
       <div className="col-xs-5">
-        <div className="Info">
+        <div className="info">
           <InfoPanel location={location} />
         </div>
       </div>
